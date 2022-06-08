@@ -43,6 +43,7 @@ private:
   bool m_RandomizeSpeaking;
   int m_Volume;
   unsigned m_ReleaseLength;
+	unsigned m_ReleaseTruncationLength;
   unsigned m_SamplesPerBuffer;
   float m_Gain;
   unsigned m_SampleRate;
@@ -98,8 +99,10 @@ public:
   int GetVolume() const;
   void SetScaledReleases(bool enable);
   void SetRandomizeSpeaking(bool enable);
-/* Set Release Length Truncation for Toolbar */
+	/* Set Release Length Truncation for Toolbar */
 	void SetReleaseLength(unsigned reverb);
+	/* Enalble or Disable Release Phase Alignment */
+	void SetAlignRelease(bool enable); 	// RELEASE ALIGNMENT SETTINGS CHECKBOX — 2022-06-06
 	/* Get Release Length Truncation Mechanism Value for ODF/Organ Settings Panel */
 	int GetReleaseTruncationLength();
 	/* Set Release Length Truncation Mechanism Value for ODF/Organ Settings Panel */

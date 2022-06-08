@@ -115,6 +115,12 @@ GOSettingsOptions::GOSettingsOptions(GOConfig &settings, wxWindow *parent)
     0,
     wxEXPAND | wxALL,
     5);
+	// Release Phase Alignment Switch
+  item6->Add(
+    m_Align = new wxCheckBox(this, ID_ALIGN_RELEASE, _("Release Phase Alignment")),
+    0,
+    wxEXPAND | wxALL,
+    5);
   item6->Add(
     m_LoadLastFile = new GOChoice<GOInitialLoadType>(this, ID_LOAD_LAST_FILE),
     0,
@@ -129,6 +135,7 @@ GOSettingsOptions::GOSettingsOptions(GOConfig &settings, wxWindow *parent)
   m_Limit->SetValue(m_config.ManagePolyphony());
   m_LoadLastFile->SetCurrentSelection(m_config.LoadLastFile());
   m_Scale->SetValue(m_config.ScaleRelease());
+	m_Align->SetValue(m_config.AlignRelease());
   m_Random->SetValue(m_config.RandomizeSpeaking());
 
   wxFlexGridSizer *grid = new wxFlexGridSizer(2, 5, 5);
@@ -422,6 +429,7 @@ bool GOSettingsOptions::TransferDataFromWindow() {
   m_config.RecordDownmix(m_RecordDownmix->IsChecked());
   m_config.Volume(m_Volume->GetValue());
   m_config.ScaleRelease(m_Scale->IsChecked());
+	m_config.AlignRelease(m_Align->IsChecked());
   m_config.RandomizeSpeaking(m_Random->IsChecked());
   m_config.Concurrency(m_Concurrency->GetSelection() + 1);
   m_config.ReleaseConcurrency(m_ReleaseConcurrency->GetSelection() + 1);

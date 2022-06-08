@@ -144,6 +144,10 @@ void GOSoundEngine::SetScaledReleases(bool enable) {
   m_ScaledReleases = enable;
 }
 
+void GOSoundEngine::SetAlignRelease(bool enable) {
+  m_ReleaseAlignmentEnabled = enable;
+}
+
 void GOSoundEngine::SetRandomizeSpeaking(bool enable) {
   m_RandomizeSpeaking = enable;
 }
