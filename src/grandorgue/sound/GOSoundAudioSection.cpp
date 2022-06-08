@@ -859,52 +859,52 @@ void GOAudioSection::Compress(bool format16) {
   }
 
 #if 0
-	GOAudioSection new_section(m_Pool);
-	new_section.m_BitsPerSample = m_BitsPerSample;
-	new_section.m_Channels = m_Channels;
-	new_section.m_Data = data;
-	new_section.m_AllocSize = output_len;
-	new_section.m_Compressed = true;
-	DecompressionCache tmp;
-	InitDecompressionCache(tmp);
+GOAudioSection new_section(m_Pool);
+new_section.m_BitsPerSample = m_BitsPerSample;
+new_section.m_Channels = m_Channels;
+new_section.m_Data = data;
+new_section.m_AllocSize = output_len;
+new_section.m_Compressed = true;
+DecompressionCache tmp;
+InitDecompressionCache(tmp);
 
-	for (unsigned i = 0; i < m_SampleCount; i++)
-	{
-		for (unsigned j = 0; j < m_StartSegments.size(); j++)
-		{
-			if (m_StartSegments[j].start_offset == i && i)
-			{
-				if (tmp.position != m_StartSegments[j].cache.position)
-					wxLogError(wxT("StartSeg %d: Pos %d %d"), j, tmp.position, m_StartSegments[j].cache.position);
-				if(tmp.prev[0] != m_StartSegments[j].cache.prev[0] ||
-				   tmp.prev[1] != m_StartSegments[j].cache.prev[1])
-					wxLogError(wxT("StartSeg %d: prev %d %d - %d %d "), j, tmp.prev[0], m_StartSegments[j].cache.prev[0], 
-						   tmp.prev[1], m_StartSegments[j].cache.prev[1]);
-				if(tmp.value[0] != m_StartSegments[j].cache.value[0] ||
-				   tmp.value[1] != m_StartSegments[j].cache.value[1])
-					wxLogError(wxT("StartSeg %d: prev %d %d - %d %d "), j, tmp.value[0], m_StartSegments[j].cache.value[0], 
-						   tmp.value[1], m_StartSegments[j].cache.value[1]);
-				if(tmp.last[0] != m_StartSegments[j].cache.last[0] ||
-				   tmp.last[1] != m_StartSegments[j].cache.last[1])
-					wxLogError(wxT("StartSeg %d: last %d %d - %d %d "), j, tmp.last[0], m_StartSegments[j].cache.last[0], 
-						   tmp.last[1], m_StartSegments[j].cache.last[1]);
-				if (tmp.ptr != data + (intptr_t)m_StartSegments[j].cache.ptr)
-					wxLogError(wxT("StartSeg %d: ptr %p %p"), j, tmp.ptr, data + (intptr_t)m_StartSegments[j].cache.ptr);
-			}
-		}
+for (unsigned i = 0; i < m_SampleCount; i++)
+{
+for (unsigned j = 0; j < m_StartSegments.size(); j++)
+{
+if (m_StartSegments[j].start_offset == i && i)
+{
+if (tmp.position != m_StartSegments[j].cache.position)
+wxLogError(wxT("StartSeg %d: Pos %d %d"), j, tmp.position, m_StartSegments[j].cache.position);
+if(tmp.prev[0] != m_StartSegments[j].cache.prev[0] ||
+   tmp.prev[1] != m_StartSegments[j].cache.prev[1])
+wxLogError(wxT("StartSeg %d: prev %d %d - %d %d "), j, tmp.prev[0], m_StartSegments[j].cache.prev[0], 
+   tmp.prev[1], m_StartSegments[j].cache.prev[1]);
+if(tmp.value[0] != m_StartSegments[j].cache.value[0] ||
+   tmp.value[1] != m_StartSegments[j].cache.value[1])
+wxLogError(wxT("StartSeg %d: prev %d %d - %d %d "), j, tmp.value[0], m_StartSegments[j].cache.value[0], 
+   tmp.value[1], m_StartSegments[j].cache.value[1]);
+if(tmp.last[0] != m_StartSegments[j].cache.last[0] ||
+   tmp.last[1] != m_StartSegments[j].cache.last[1])
+wxLogError(wxT("StartSeg %d: last %d %d - %d %d "), j, tmp.last[0], m_StartSegments[j].cache.last[0], 
+   tmp.last[1], m_StartSegments[j].cache.last[1]);
+if (tmp.ptr != data + (intptr_t)m_StartSegments[j].cache.ptr)
+wxLogError(wxT("StartSeg %d: ptr %p %p"), j, tmp.ptr, data + (intptr_t)m_StartSegments[j].cache.ptr);
+}
+}
 
-		for (unsigned j = 0; j < m_Channels; j++)
-		{
-			int old_value = GetSample(i, j);
-			int new_value = new_section.GetSample(i, j, &tmp);
-			if (old_value != new_value)
-				wxLogError(wxT("%d %d: %d %d"), i, j, old_value, new_value);
-		}
-	}
+for (unsigned j = 0; j < m_Channels; j++)
+{
+int old_value = GetSample(i, j);
+int new_value = new_section.GetSample(i, j, &tmp);
+if (old_value != new_value)
+wxLogError(wxT("%d %d: %d %d"), i, j, old_value, new_value);
+}
+}
 
-	new_section.m_Data = NULL;
+new_section.m_Data = NULL;
 
-	wxLogError(wxT("Compress: %d %d"), m_AllocSize, output_len);
+wxLogError(wxT("Compress: %d %d"), m_AllocSize, output_len);
 #endif
 
   m_Pool.Free(m_Data);

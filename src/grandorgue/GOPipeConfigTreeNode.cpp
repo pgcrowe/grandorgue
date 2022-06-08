@@ -43,10 +43,10 @@ void GOPipeConfigTreeNode::UpdateTuning() {
 
 void GOPipeConfigTreeNode::UpdateReleaseTruncationLength()
 {
-	for(unsigned i = 0; i < m_Childs.size(); i++)
-		m_Childs[i]->GetPipeConfig().GetCallback()->UpdateReleaseTruncationLength();
-	if (m_Callback)
-		m_Callback->UpdateReleaseTruncationLength();
+for(unsigned i = 0; i < m_Childs.size(); i++)
+m_Childs[i]->GetPipeConfig().GetCallback()->UpdateReleaseTruncationLength();
+if (m_Callback)
+m_Callback->UpdateReleaseTruncationLength();
 }
 
 void GOPipeConfigTreeNode::UpdateAudioGroup() {

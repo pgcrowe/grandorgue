@@ -37,7 +37,7 @@ GOSoundProvider::GOSoundProvider(GOMemoryPool &pool)
     m_VelocityVolumeBase(1),
     m_VelocityVolumeIncrement(0),
     m_ReleaseCrossfadeLength(184),
-		m_ReleaseTruncationLength(0) {
+m_ReleaseTruncationLength(0) {
   m_Gain = 0.0f;
 }
 
@@ -172,7 +172,7 @@ unsigned GOSoundProvider::GetReleaseCrossfadeLength() const {
 }
 
 unsigned GOSoundProvider::GetReleaseTruncationLength() const {
-	return m_ReleaseTruncationLength;
+return m_ReleaseTruncationLength;
 }
 
 void GOSoundProvider::SetVelocityParameter(float min_volume, float max_volume) {

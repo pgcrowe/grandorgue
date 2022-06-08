@@ -47,7 +47,7 @@ GOSoundingPipe::GOSoundingPipe(
     m_HarmonicNumber(harmonic_number),
     m_LoopCrossfadeLength(0),
     m_ReleaseCrossfadeLength(0),
-		m_ReleaseTruncationLength(0),
+m_ReleaseTruncationLength(0),
     m_PitchCorrection(pitch_correction),
     m_MinVolume(min_volume),
     m_MaxVolume(max_volume),
@@ -137,7 +137,7 @@ void GOSoundingPipe::Init(
   m_SampleMidiKeyNumber = -1;
   m_LoopCrossfadeLength = 0;
   m_ReleaseCrossfadeLength = 0;
-	m_ReleaseTruncationLength = 0;
+m_ReleaseTruncationLength = 0;
   UpdateAmplitude();
   m_organfile->GetWindchest(m_SamplerGroupID - 1)->AddPipe(this);
 
@@ -202,8 +202,8 @@ void GOSoundingPipe::Load(
     200,
     false,
     0);
-	m_ReleaseTruncationLength = cfg.ReadInteger(
-		ODFSetting, group, prefix + wxT("ReleaseTruncationLength"), 0, 10000, false, 0);
+m_ReleaseTruncationLength = cfg.ReadInteger(
+ODFSetting, group, prefix + wxT("ReleaseTruncationLength"), 0, 10000, false, 0);
   m_RetunePipe = cfg.ReadBoolean(
     ODFSetting, group, prefix + wxT("AcceptsRetuning"), false, m_RetunePipe);
   UpdateAmplitude();
@@ -265,7 +265,7 @@ void GOSoundingPipe::LoadData() {
       m_SampleMidiKeyNumber,
       m_LoopCrossfadeLength,
       m_ReleaseCrossfadeLength,
-			m_ReleaseTruncationLength);
+m_ReleaseTruncationLength);
     Validate();
   } catch (wxString str) {
     m_SoundProvider.ClearData();
@@ -313,7 +313,7 @@ void GOSoundingPipe::UpdateHash(GOHash &hash) {
   hash.Update(m_SampleMidiKeyNumber);
   hash.Update(m_LoopCrossfadeLength);
   hash.Update(m_ReleaseCrossfadeLength);
-	hash.Update(m_ReleaseTruncationLength);
+hash.Update(m_ReleaseTruncationLength);
 
   hash.Update(m_AttackInfo.size());
   for (unsigned i = 0; i < m_AttackInfo.size(); i++) {
@@ -476,8 +476,8 @@ void GOSoundingPipe::UpdateAmplitude() {
 }
 
 void GOSoundingPipe::UpdateReleaseTruncationLength() {
-	m_SoundProvider.SetReleaseTruncationLength(
-		m_PipeConfig.GetEffectiveReleaseTruncationLength());
+m_SoundProvider.SetReleaseTruncationLength(
+m_PipeConfig.GetEffectiveReleaseTruncationLength());
 }
 
 void GOSoundingPipe::UpdateTuning() {

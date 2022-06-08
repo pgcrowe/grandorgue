@@ -103,7 +103,7 @@ public:
   GOSettingBool LosslessCompression;
   GOSettingBool ManagePolyphony;
   GOSettingBool ScaleRelease;
-	GOSettingBool AlignRelease;
+GOSettingBool AlignRelease;
   GOSettingBool RandomizeSpeaking;
   GOSettingBool ReverbEnabled;
   GOSettingBool ReverbDirect;

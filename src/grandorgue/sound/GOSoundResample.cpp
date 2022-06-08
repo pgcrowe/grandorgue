@@ -38,19 +38,19 @@ static double sinc(const double arg) {
 static
 void
 create_sinc_filter
-	(float          *filter_buffer
-	,const unsigned  filter_buffer_length
-	,const float     f0
-	,const float     band_width
-	,const unsigned  sample_rate
-	,const float     gain
-	)
+(float          *filter_buffer
+,const unsigned  filter_buffer_length
+,const float     f0
+,const float     band_width
+,const unsigned  sample_rate
+,const float     gain
+)
 {
-	for (unsigned i = 0; i < filter_buffer_length; i++)
-	{
-		double t = ((double)i - (filter_buffer_length * 0.5)) / sample_rate;
-		filter_buffer[i] = gain * (float)(2.0 * band_width * cos(2.0 * M_PI * f0 * t) * sinc(band_width * t) / sample_rate);
-	}
+for (unsigned i = 0; i < filter_buffer_length; i++)
+{
+double t = ((double)i - (filter_buffer_length * 0.5)) / sample_rate;
+filter_buffer[i] = gain * (float)(2.0 * band_width * cos(2.0 * M_PI * f0 * t) * sinc(band_width * t) / sample_rate);
+}
 }
 #endif
 

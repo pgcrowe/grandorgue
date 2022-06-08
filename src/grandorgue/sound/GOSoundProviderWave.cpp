@@ -28,7 +28,7 @@ void GOSoundProviderWave::SetAmplitude(float fixed_amplitude, float gain) {
 
 /*  Links to GOSoundingPipe.cpp */
 void GOSoundProviderWave::SetReleaseTruncationLength(unsigned truncation) {
-	m_ReleaseTruncationLength = truncation;
+m_ReleaseTruncationLength = truncation;
 }
 
 unsigned GOSoundProviderWave::GetBytesPerSample(unsigned bits_per_sample) {
@@ -289,7 +289,7 @@ void GOSoundProviderWave::LoadFromFile(
   int midi_key_number,
   unsigned loop_crossfade_length,
   unsigned release_crossfase_length,
-	unsigned release_truncation_length) {
+unsigned release_truncation_length) {
   ClearData();
   if (!load_channels)
     return;
@@ -432,16 +432,16 @@ void GOSoundProviderWave::LoadFromFile(
       m_MidiKeyNumber = midi_key_number;
       m_MidiPitchFract = 0;
     }
-		
+
     if (release_crossfase_length)
       m_ReleaseCrossfadeLength = release_crossfase_length;
     else
       m_ReleaseCrossfadeLength = GetFaderLength(m_MidiKeyNumber);
 
-			/* Release Truncation Parameter Link from ODF File */
-   	if (release_truncation_length) {
-			m_ReleaseTruncationLength = release_truncation_length;
-		}
+/* Release Truncation Parameter Link from ODF File */
+   if (release_truncation_length) {
+m_ReleaseTruncationLength = release_truncation_length;
+}
   } catch (wxString error) {
     wxLogError(_("caught exception: %s\n"), error.c_str());
     ClearData();

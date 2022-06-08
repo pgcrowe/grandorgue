@@ -65,9 +65,9 @@ public:
   unsigned GetDefaultDelay();
   void SetDelay(unsigned delay);
 
-	unsigned GetReleaseTruncationLength();
-	unsigned GetDefaultReleaseTruncationLength();
-	void SetReleaseTruncationLength(unsigned truncation);
+unsigned GetReleaseTruncationLength();
+unsigned GetDefaultReleaseTruncationLength();
+void SetReleaseTruncationLength(unsigned truncation);
 
   const wxString &GetAudioGroup();
   void SetAudioGroup(const wxString &str);

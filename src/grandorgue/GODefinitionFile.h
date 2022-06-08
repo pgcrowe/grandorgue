@@ -117,7 +117,7 @@ private:
 
   void UpdateAmplitude();
   void UpdateTuning();
-	void UpdateReleaseTruncationLength();
+void UpdateReleaseTruncationLength();
   void UpdateAudioGroup();
 
   wxString GetOrganHash();
