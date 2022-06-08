@@ -107,7 +107,7 @@ void GOSound::OpenSound() {
   m_SoundEngine.SetPolyphonyLimiting(m_config.ManagePolyphony());
   m_SoundEngine.SetHardPolyphony(m_config.PolyphonyLimit());
   m_SoundEngine.SetScaledReleases(m_config.ScaleRelease());
-m_SoundEngine.SetAlignedReleases(m_config.AlignRelease());
+  m_SoundEngine.SetAlignedReleases(m_config.AlignRelease());
   m_SoundEngine.SetRandomizeSpeaking(m_config.RandomizeSpeaking());
   m_SoundEngine.SetInterpolationType(m_config.InterpolationType());
   m_SoundEngine.SetAudioGroupCount(audio_group_count);

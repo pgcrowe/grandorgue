@@ -144,7 +144,7 @@ void GOSoundEngine::SetScaledReleases(bool enable) {
   m_ScaledReleases = enable;
 }
 
-void GOSoundEngine::SetAlignRelease(bool enable) {
+void GOSoundEngine::SetAlignedReleases(bool enable) {
   m_ReleaseAlignmentEnabled = enable;
 }
 
