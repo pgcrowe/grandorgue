@@ -115,9 +115,9 @@ GOSettingsOptions::GOSettingsOptions(GOConfig &settings, wxWindow *parent)
     0,
     wxEXPAND | wxALL,
     5);
-// Release Phase Alignment Switch
+// Auto Release Phase Alignment Switch
   item6->Add(
-    m_Align = new wxCheckBox(this, ID_ALIGN_RELEASE, _("Release Phase Alignment")),
+    m_Align = new wxCheckBox(this, ID_ALIGN_RELEASE, _("Auto release phase alignment")),
     0,
     wxEXPAND | wxALL,
     5);

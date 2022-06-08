@@ -98,12 +98,11 @@ public:
   unsigned GetHardPolyphony() const;
   int GetVolume() const;
   void SetScaledReleases(bool enable);
-  // Adds a Checkbox to Disable/Enable Release Sample Phase Alignment
+  // Adds a Checkbox to Disable/Enable Auto Release Sample Phase Alignment
   void SetAlignedReleases(bool enable);
   void SetRandomizeSpeaking(bool enable);
   /* Set Release Length Truncation for Toolbar */
   void SetReleaseLength(unsigned reverb);
-  /* Enalble or Disable Release Phase Alignment */
   /* Get Release Length Truncation Mechanism Value for ODF/Organ Settings Panel */
   int GetReleaseTruncationLength();
   /* Set Release Length Truncation Mechanism Value for ODF/Organ Settings Panel */
