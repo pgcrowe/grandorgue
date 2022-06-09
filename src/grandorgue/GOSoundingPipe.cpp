@@ -47,7 +47,7 @@ GOSoundingPipe::GOSoundingPipe(
     m_HarmonicNumber(harmonic_number),
     m_LoopCrossfadeLength(0),
     m_ReleaseCrossfadeLength(0),
-m_ReleaseTruncationLength(0),
+    m_ReleaseTruncationLength(0),
     m_PitchCorrection(pitch_correction),
     m_MinVolume(min_volume),
     m_MaxVolume(max_volume),
@@ -137,7 +137,7 @@ void GOSoundingPipe::Init(
   m_SampleMidiKeyNumber = -1;
   m_LoopCrossfadeLength = 0;
   m_ReleaseCrossfadeLength = 0;
-m_ReleaseTruncationLength = 0;
+  m_ReleaseTruncationLength = 0;
   UpdateAmplitude();
   m_organfile->GetWindchest(m_SamplerGroupID - 1)->AddPipe(this);
 

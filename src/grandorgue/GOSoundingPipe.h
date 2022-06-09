@@ -38,7 +38,7 @@ private:
   unsigned m_HarmonicNumber;
   unsigned m_LoopCrossfadeLength;
   unsigned m_ReleaseCrossfadeLength;
-unsigned m_ReleaseTruncationLength;
+  unsigned m_ReleaseTruncationLength;
   float m_PitchCorrection;
   float m_MinVolume;
   float m_MaxVolume;

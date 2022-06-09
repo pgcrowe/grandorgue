@@ -110,6 +110,7 @@ GOSettingsOptions::GOSettingsOptions(GOConfig &settings, wxWindow *parent)
     0,
     wxEXPAND | wxALL,
     5);
+  // Checkbox to Enable or Disable Pipe Speech Randomization for the Entire Organ (Changes the Pitch of Each Pipe999 Before Playback.) 
   item6->Add(
     m_Random = new wxCheckBox(this, ID_RANDOMIZE, _("Randomize pipe speaking")),
     0,
