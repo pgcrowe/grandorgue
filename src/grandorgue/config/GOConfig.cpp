@@ -169,7 +169,7 @@ GOConfig::GOConfig(wxString instance)
       this, wxT("General"), wxT("LosslessCompression"), false),
     ManagePolyphony(this, wxT("General"), wxT("ManagePolyphony"), true),
     ScaleRelease(this, wxT("General"), wxT("ScaleRelease"), true),
-AlignRelease(this, wxT("General"), wxT("AlignRelease"), true),
+    AlignRelease(this, wxT("General"), wxT("AlignRelease"), true),
     RandomizeSpeaking(this, wxT("General"), wxT("RandomizeSpeaking"), true),
     ReverbEnabled(this, wxT("Reverb"), wxT("ReverbEnabled"), false),
     ReverbDirect(this, wxT("Reverb"), wxT("ReverbDirect"), true),

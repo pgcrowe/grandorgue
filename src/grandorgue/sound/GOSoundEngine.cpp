@@ -155,6 +155,7 @@ void GOSoundEngine::SetRandomizeSpeaking(bool enable) {
 /* Set Release Length Truncation for Toolbar */
 void SetReleaseLength(unsigned reverb);
 
+/* Randomize Speaking Algorithm — Randomizes the Pitch of each Pipe999 Before Playback */
 float GOSoundEngine::GetRandomFactor() {
   if (m_RandomizeSpeaking) {
     const double factor = (pow(2, 1.0 / 1200.0) - 1) / (RAND_MAX / 2);
